@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * LogRepository:
+ * Responsible for preforming basic CRUD operations on the database except the User can not delete or update logs once pushed to the database.
+ * From here, a user can get a specific log, all logs, and create a log.
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;

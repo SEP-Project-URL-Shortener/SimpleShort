@@ -1,0 +1,265 @@
+﻿@model CreateShortenedUrlModel
+@using SimpleShort.Models
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <title>URL Shortener</title>
+    <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" href="~/css/fonts/fonts.css">
+    <link rel="stylesheet" href="~/css/profile-button.css">
+    <link rel="stylesheet" href="~/css/button.css">
+    <link rel="stylesheet" href="~/css/form_shorten-url.css">
+    <link rel="stylesheet" href="~/css/sign-in.css">
+</head>
+<body>
+    <div class="search-box">
+        <input type="text" placeholder="Search here..." />
+    </div>
+
+    <header>
+        <div class="container">
+            <div id="branding">
+                <img class="noselect" src="~/img/logo-icon.png" alt="">
+                <h1 class="noselect"><span class="highlight">simple</span>short</h1>
+            </div>
+
+            <nav>
+                <ul class="noselect">
+                    <li class="current"><a class="nav color-red active" href="index.html">Home</a></li>
+                    <li><a class="nav color-gray" href="#">Dashboard</a></li>
+                    <li><a class="nav color-gray" href="#">Community</a></li>
+                    <li><a class="nav color-gray" href="#">Support</a></li>
+                    <li>
+                        <a class="nav-btn-container" href="#">
+                            <img class="search-btn" src="~/img/search-icon.svg" alt="">
+                            <img class="close-btn" src="~/img/close-icon.svg" alt="">
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div id="profile-dropdown">
+                <div class="dropdown">
+                    <ul>
+                        <li>
+                            <a href="#" class="dropbtn dropdown-toggle">
+                                <img src="~/img/blank-profile-icon.png" alt="My Account">
+                            </a>
+                            <div class="dropdown-content">
+                                <a href="#" class="dropdown-item" onclick="document.getElementById('id02').style.display='flex'"><span class="dashboard">Dashboard</span></a>
+                                <a href="#" class="dropdown-item"><span class="my-profile">My Profile</span></a>
+                                <a href="#" class="dropdown-item"><span class="settings">Settings</span></a>
+                                <a href="#" class="dropdown-item"><span class="support">Support</span></a>
+                                <a href="#" class="dropdown-item"><span class="log-out">Log Out</span></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <div id="id02" class="sign-in-form">
+        <div class="container animate" id="container">
+            <div class="form-container sign-up-container">
+                <form action="#">
+                    <h1>Create Account</h1>
+                    <div class="social-container">
+                        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                        <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <span>or use your email for registration</span>
+                    <input type="text" placeholder="Name" />
+                    <input type="email" placeholder="Email" />
+                    <input type="password" placeholder="Password" />
+                    <button>Sign Up</button>
+                </form>
+            </div>
+            <div class="form-container sign-in-container">
+                <form action="#">
+                    <h1>Sign in</h1>
+                    <div class="social-container">
+                        <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                        <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <span>or use your account</span>
+                    <input type="email" placeholder="Email" />
+                    <input type="password" placeholder="Password" />
+                    <a href="#">Forgot your password?</a>
+                    <button>Sign In</button>
+                </form>
+            </div>
+            <div class="overlay-container">
+                <div class="overlay">
+                    <div class="overlay-panel overlay-left">
+                        <h1>Welcome Back!</h1>
+                        <p>To keep connected with us please login with your personal info</p>
+                        <button class="ghost" id="signIn">Sign In</button>
+                    </div>
+                    <div class="overlay-panel overlay-right">
+                        <h1>Hello, Friend!</h1>
+                        <p>Enter your personal details and start journey with us</p>
+                        <button class="ghost" id="signUp">Sign Up</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign Up</button> -->
+    <section id="showcase">
+        <div class="container">
+            <h1>Get Started</h1>
+            <p>Exorcizamus te, omnis immundus spritus, omnis satanica potestas, omnis incursio infernalis adversarii, omnis legio, omnis congregatio et secta diabolica.</p>
+            <p>Ergo, draco maledicte. Ecclesiam tuam securi tibi facias libertate servire, te rogamus, audi nos.</p>
+            <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu luctus ipsum, rhoncus semper magna. Nulla nec magna sit amet sem interdum condimentum.</p> -->
+            <div class="wrapper">
+                <a onclick="document.getElementById('id01').style.display='block'" style="width:auto;" class="cta" href="#">
+                    <span>SHORTEN &nbsp; URL</span>
+                    <span>
+                        <svg width="66px" height="43px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <g id="arrow" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <path class="one" d="M40.1543933,3.89485454 L43.9763149,0.139296592 C44.1708311,-0.0518420739 44.4826329,-0.0518571125 44.6771675,0.139262789 L65.6916134,20.7848311 C66.0855801,21.1718824 66.0911863,21.8050225 65.704135,22.1989893 C65.7000188,22.2031791 65.6958657,22.2073326 65.6916762,22.2114492 L44.677098,42.8607841 C44.4825957,43.0519059 44.1708242,43.0519358 43.9762853,42.8608513 L40.1545186,39.1069479 C39.9575152,38.9134427 39.9546793,38.5968729 40.1481845,38.3998695 C40.1502893,38.3977268 40.1524132,38.395603 40.1545562,38.3934985 L56.9937789,21.8567812 C57.1908028,21.6632968 57.193672,21.3467273 57.0001876,21.1497035 C56.9980647,21.1475418 56.9959223,21.1453995 56.9937605,21.1432767 L40.1545208,4.60825197 C39.9574869,4.41477773 39.9546013,4.09820839 40.1480756,3.90117456 C40.1501626,3.89904911 40.1522686,3.89694235 40.1543933,3.89485454 Z" fill="#FFFFFF"></path>
+                                <path class="two" d="M20.1543933,3.89485454 L23.9763149,0.139296592 C24.1708311,-0.0518420739 24.4826329,-0.0518571125 24.6771675,0.139262789 L45.6916134,20.7848311 C46.0855801,21.1718824 46.0911863,21.8050225 45.704135,22.1989893 C45.7000188,22.2031791 45.6958657,22.2073326 45.6916762,22.2114492 L24.677098,42.8607841 C24.4825957,43.0519059 24.1708242,43.0519358 23.9762853,42.8608513 L20.1545186,39.1069479 C19.9575152,38.9134427 19.9546793,38.5968729 20.1481845,38.3998695 C20.1502893,38.3977268 20.1524132,38.395603 20.1545562,38.3934985 L36.9937789,21.8567812 C37.1908028,21.6632968 37.193672,21.3467273 37.0001876,21.1497035 C36.9980647,21.1475418 36.9959223,21.1453995 36.9937605,21.1432767 L20.1545208,4.60825197 C19.9574869,4.41477773 19.9546013,4.09820839 20.1480756,3.90117456 C20.1501626,3.89904911 20.1522686,3.89694235 20.1543933,3.89485454 Z" fill="#FFFFFF"></path>
+                                <path class="three" d="M0.154393339,3.89485454 L3.97631488,0.139296592 C4.17083111,-0.0518420739 4.48263286,-0.0518571125 4.67716753,0.139262789 L25.6916134,20.7848311 C26.0855801,21.1718824 26.0911863,21.8050225 25.704135,22.1989893 C25.7000188,22.2031791 25.6958657,22.2073326 25.6916762,22.2114492 L4.67709797,42.8607841 C4.48259567,43.0519059 4.17082418,43.0519358 3.97628526,42.8608513 L0.154518591,39.1069479 C-0.0424848215,38.9134427 -0.0453206733,38.5968729 0.148184538,38.3998695 C0.150289256,38.3977268 0.152413239,38.395603 0.154556228,38.3934985 L16.9937789,21.8567812 C17.1908028,21.6632968 17.193672,21.3467273 17.0001876,21.1497035 C16.9980647,21.1475418 16.9959223,21.1453995 16.9937605,21.1432767 L0.15452076,4.60825197 C-0.0425130651,4.41477773 -0.0453986756,4.09820839 0.148075568,3.90117456 C0.150162624,3.89904911 0.152268631,3.89694235 0.154393339,3.89485454 Z" fill="#FFFFFF"></path>
+                            </g>
+                        </svg>
+                    </span>
+                </a>
+            </div>
+            
+            <p>@ViewBag.CreateMessage</p>
+
+        </div>
+    </section>
+
+
+    <div id="id01" class="modal">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+            @using (Html.BeginForm("Index", "Home", FormMethod.Post, new {@class="modal-content animate"}))
+            {
+    <div class="container">
+        <h1>Shorten URL</h1>
+        <p>Please fill in this form to continue.</p>
+        <hr>
+        <div class="default">
+            <label><b>Full (Unshortened) URL</b></label>
+            @Html.TextBoxFor(m => m.OriginalUrl, new { @name = "full url", @placeholder = "i.e. https://www.google.com/", @type = "text", @required = "true" })
+            @* <input name="full url" placeholder="i.e. https://www.google.com/" type="text" data-lpignore="true" required> *@
+        </div>
+
+        <label><b>Shortened URL Name</b></label>
+        <div id="pre-text">
+            <label>https://www.simpleshort.com/</label>
+            @Html.TextBoxFor(m => m.Path, new { @name = "short name", @placeholder = "name", @type = "text" })
+            @* <input value="@createModel.Path" name="short name" placeholder="name" type="text" data-lpignore="true"> *@
+        </div>
+
+        <div class="default">
+            <label><b>URL Expiration:</b></label>
+            @Html.TextBoxFor(m => m.Expiration, new { @type = "date", @value = "@createModel.Expiration", @name = "expiration", @required = "true" })
+            @* <input type="date" value="@createModel.Expiration" name="expiration" required> *@
+        </div>
+
+        <div class="clearfix">
+            <button type="button" onclick="document.getElementById('id01').style.display = 'none'" class="cancelbtn">Cancel</button>
+            <button id="Submit" type="submit" class="signupbtn">Submit</button>
+        </div>
+    </div>
+            }
+    </div>
+
+
+    <section id="newsletter">
+        <div class="container">
+            <h1>Subscribe To Our Newsletter</h1>
+            <form>
+                <input type="email" placeholder="Enter Email...">
+                <button type="submit" class="button_1">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="boxes">
+        <div class="container">
+            <div class="box">
+                <img src="~/img/logo_html.png">
+                <h3>HTML5 Markup</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mi augue, viverra sit amet ultricies</p>
+            </div>
+            <div class="box">
+                <img src="~/img/logo_css.png">
+                <h3>CSS3 Styling</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mi augue, viverra sit amet ultricies</p>
+            </div>
+            <div class="box">
+                <img src="~/img/logo_brush.png">
+                <h3>Graphic Design</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mi augue, viverra sit amet ultricies</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>SimpleShort, Copyright &copy; 2020</p>
+    </footer>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="~/js/main.js"></script>
+    <script type="text/javascript" src="~/js/extra.js"></script>
+    <script>
+
+    </script>
+
+    <script>
+
+        // Get modals
+        var modalShortenLink = document.getElementById('id01');
+        var modalSignIn = document.getElementById('id02');
+
+        //////////////////
+        // Shorten Link //
+        //////////////////
+
+        // When the user clicks anywhere outside a modal, close it
+        window.onclick = function (event) {
+            if (event.target === modalShortenLink) {
+                modalShortenLink.style.display = "none";
+            } else if (event.target === modalSignIn) {
+                modalSignIn.style.display = "none";
+            }
+        }
+
+        /////////////
+        // Sign In //
+        /////////////
+        const signUpButton = document.getElementById('signUp');
+        const signInButton = document.getElementById('signIn');
+        const container = document.getElementById('container');
+
+        signUpButton.addEventListener('click',
+            () => {
+                container.classList.add("right-panel-active");
+            });
+
+        signInButton.addEventListener('click',
+            () => {
+                container.classList.remove("right-panel-active");
+            });
+    </script>
+</body>
+</html>

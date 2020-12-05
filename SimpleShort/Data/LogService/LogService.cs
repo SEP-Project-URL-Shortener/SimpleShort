@@ -1,4 +1,9 @@
-﻿using System.Diagnostics;
+﻿/*
+ * LogService:
+ * Responsible for creating a log object, adding it to the database, and printing it to the screen.
+ */
+
+using System.Diagnostics;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using SimpleShort.Entities.Logging;

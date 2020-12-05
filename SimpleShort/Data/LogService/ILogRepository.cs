@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * ILogRepository:
+ * Responsible for giving the user an interface of the repository instead of giving them the entire repository.
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using SimpleShort.Entities.Logging;

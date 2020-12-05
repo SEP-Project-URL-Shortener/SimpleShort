@@ -1,4 +1,18 @@
-﻿using System;
+﻿/*
+ * ShortenedUrl:
+ * The object used for storing a short url in the database. I wish I could make some properties private to encapsulate it further from the user but with EF this is not possible.
+ *
+ * Id: string = Unique Id for ShortenedUrl.
+ * IpAddress: string = Ip address of the user.
+ * OriginalUrl: string = Original url to be shortened.
+ * Path: string = The shortened url that redirects to the Original url.
+ * Expiration: string = When the shortened url expires.
+ * LastUsed: string = When was the shortened url last used.
+ * Created: string = When was the shortened url created.
+ * NumberOfUses: int = The number of uses the shortened url has.
+ */
+
+using System;
 using Compute.Classes.Random;
 
 namespace SimpleShort.Entities

@@ -1,3 +1,9 @@
+/*
+ * SimpleShort:
+ * Responsible for starting the project.
+ * Creates the config for the entire project.
+ */
+
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;

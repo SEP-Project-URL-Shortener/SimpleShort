@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * ShortenUrlRepository:
+ * Responsible for preforming basic CRUD operations on the database.
+ * The user can get the long url, get a certain complete short url object, get all short url objects, create a short url, update a short url, and delete a short url.
+ */
+
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 using Compute.Classes.Hashing;
@@ -64,6 +70,9 @@ namespace SimpleShort.Data
             if (await IsPathTaken(model.Path))
                 return null;
 
+            if (await FilterService.FilterService.IsValid(model.Path))
+                return null;
+
             var hashedIpAddress = HashIpAddress(model.IpAddress);
             var shortenedUrl = new ShortenedUrl(hashedIpAddress, model.OriginalUrl, model.Path, model.Expiration);
 
@@ -85,11 +94,17 @@ namespace SimpleShort.Data
             if (existingUrl == null)
                 return null;
 
+            if (await IsPathTaken(model.Path))
+                return null;
+
+            if (await FilterService.FilterService.IsValid(model.Path))
+                return null;
+
             existingUrl.Path = model.Path;
             existingUrl.OriginalUrl = model.OriginalUrl;
             existingUrl.Expiration = model.Expiration;
 
-            _context.ShortenedUrls.Update(existingUrl);
+            // _context.ShortenedUrls.Update(existingUrl);
 
             return await SaveChanges()
                 ? new SimpleShortUrl(existingUrl)
@@ -118,7 +133,7 @@ namespace SimpleShort.Data
         }
 
         private async Task<bool> IsPathTaken(string path)
-            => await _context.ShortenedUrls.AnyAsync(shortUrl => shortUrl.Path.Equals(path));// TODO: && shortUrl.IsExpired());
+            => await _context.ShortenedUrls.AnyAsync(shortUrl => shortUrl.Path.Equals(path));
 
         private async Task<bool> SaveChanges()
             => await _context.SaveChangesAsync() > 0;

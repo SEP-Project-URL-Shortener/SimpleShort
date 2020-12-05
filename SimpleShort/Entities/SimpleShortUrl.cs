@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+ * SimpleShortUrl:
+ * The object used as an adapter to show a user information they can use.
+ *
+ * OriginalUrl: string = Original url to be shortened.
+ * Path: string = The shortened url that redirects to the Original url.
+ * Expiration: string = When the shortened url expires.
+ */
+
+using System;
 
 namespace SimpleShort.Entities
 {

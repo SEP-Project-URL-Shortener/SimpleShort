@@ -1,4 +1,15 @@
-﻿using System;
+﻿/*
+ * LogEntity:
+ * The object used for logging. I wish I could make some properties private to encapsulate it further from the user but with EF this is not possible.
+ *
+ * Id: Guid = Unique Id for log.
+ * Occurred: DateTime = When the log occurred.
+ * Location: string = Where the log was called from.
+ * Request: string = What operation was being done at time of log.
+ * Information: string = Any information pertaining to the log.
+ */
+
+using System;
 
 namespace SimpleShort.Entities.Logging
 {

@@ -1,4 +1,9 @@
-﻿using System.Threading.Tasks;
+﻿/*
+ * IShortenUrlRepository:
+ * Responsible for giving the user an interface of the repository instead of giving them the entire repository.
+ */
+
+using System.Threading.Tasks;
 using SimpleShort.Entities;
 using SimpleShort.Models;
 

@@ -1,4 +1,9 @@
-﻿using System.Threading.Tasks;
+﻿/*
+ * ILogService:
+ * Responsible for giving the user an interface of the service instead of giving them the entire service.
+ */
+
+using System.Threading.Tasks;
 
 namespace SimpleShort.Data.LogService
 {

@@ -1,3 +1,9 @@
+/*
+ * Startup:
+ * Responsible for declaring services and pipelines.
+ * This is also used to dependency inject all repositories and services.
+ */
+
 using System;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -32,10 +38,8 @@ namespace SimpleShort
             services.AddScoped<ILogRepository, LogRepository>();
             services.AddScoped<ILogService, LogService>();
 
-            // services.AddSingleton<LogService>();
-            // services.Decorate<IShortenUrlRepository, ShortenUrlLoggingDecorator>();
-
             services.AddControllers();
+            services.AddControllersWithViews();
 
             services.AddSwaggerGen(options =>
             {
@@ -44,14 +48,7 @@ namespace SimpleShort
                 {
                     Title = Configuration["SwaggerUIDocs:Title"],
                     Version = Configuration["SwaggerUIDocs:Version"],
-                    Description = Configuration["SwaggerUIDocs:Description"],
-                    // TermsOfService = new Uri(Configuration["SwaggerUIDocs:TermsOfService"]), // TODO
-                    // Contact = new OpenApiContact
-                    // {
-                    //     Name = Configuration["SwaggerUIDocs:Contact:Name"],
-                    //     Email = Configuration["SwaggerUIDocs:Contact:Email"],
-                    //     // Url = new Uri(Configuration["SwaggerUIDocs:Contact:Url"]) // TODO
-                    // }
+                    Description = Configuration["SwaggerUIDocs:Description"]
                 });
             });
         }
@@ -70,15 +67,15 @@ namespace SimpleShort
                     $"/swagger/{Configuration["SwaggerUIDocs:Title"]}/swagger.json",
                     Configuration["SwaggerUIDocs:Title"]
                     );
-                endpoints.RoutePrefix = string.Empty;
             });
 
-            // app.UseHttpsRedirection();
             app.UseRouting();
+            app.UseStaticFiles();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}");
             });
         }
     }

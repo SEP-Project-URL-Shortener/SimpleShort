@@ -1,4 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿/*
+ * ShortenedUrlContext:
+ * Responsible for connecting to the database. We are using EntityFrameworkCore to connect and manage the database automatically.
+ *
+ * ShortenedUrls: ShortenedUrl = Database table holding all shortened url information.
+ * Logs: LogEntity = Database table holding all log information
+ */
+
+using Microsoft.EntityFrameworkCore;
 using SimpleShort.Entities;
 using SimpleShort.Entities.Logging;
 

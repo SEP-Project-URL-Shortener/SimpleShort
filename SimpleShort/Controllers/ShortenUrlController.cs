@@ -1,4 +1,16 @@
-﻿using System;
+﻿/*
+ * ShortenUrlController:
+ * Route = /shorten
+ * Responsible for shortening URL API.
+ * Depending on the URL, a specific API will be used. Basic CRUD operations.
+ *
+ * HttpGet - Get information
+ * HttpPost - Create information
+ * HttpPut - Update information
+ * HttpDelete - Delete information
+ */
+
+using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;

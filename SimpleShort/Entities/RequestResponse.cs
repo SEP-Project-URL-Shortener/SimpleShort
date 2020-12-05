@@ -1,4 +1,12 @@
-﻿namespace SimpleShort.Entities
+﻿/*
+ * RequestResponse:
+ * The object used for sending a response back to the caller. I wish I could make some properties private to encapsulate it further from the user but with EF this is not possible.
+ *
+ * Status: string = The status of the request.
+ * Message: string = Any information pertaining to the request.
+ */
+
+namespace SimpleShort.Entities
 {
     public class RequestResponse
     {
