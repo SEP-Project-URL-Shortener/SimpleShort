@@ -4,16 +4,13 @@
  * Depending on the URL, a specific page will be shown. We can do calculations or data grabbing right in here.
  */
 
-using System;
-using System.Net.Http;
-using System.Net.Http.Json;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using SimpleShort.Data;
 using SimpleShort.Data.LogService;
-using SimpleShort.Entities;
 using SimpleShort.Models;
+using System;
+using System.Threading.Tasks;
 
 namespace SimpleShort.Controllers
 {
@@ -45,19 +42,22 @@ namespace SimpleShort.Controllers
                 var modelJson = JsonConvert.SerializeObject(model);
                 var newShirtUrlJson = JsonConvert.SerializeObject(newShortUrl);
                 await _logger.Log("CreateShortedUrl", $"HttpPost:CreateShortenedUrlModel", $"CreateShortenedUrlModel: [{modelJson}], NewShirtUrl: [{newShirtUrlJson}]");
-                ViewBag.CreateMessage = "Newly created url: http://simpleshort/" + newShortUrl.Path;
+
+                if (newShortUrl == null)
+                    ViewBag.CreateMessage = "Short URL already taken, please try another short url.";
+                else
+                    ViewBag.CreateMessage = "Newly created url: http://simpleshort/" + newShortUrl.Path;
             }
             catch (Exception ex)
             {
                 var jsonModel = JsonConvert.SerializeObject(model);
                 await _logger.Log("GetAllShortenedUrls", "HttpPost:CreateShortenedUrlModel", $"CreateShortenedUrlModel: [{jsonModel}], Error: {ex}");
                 ViewBag.CreateMessage =
-                    "An error occurred, please try again. If this continues please contact a site admin.";
+                    "Short URL already taken, please try another short url.";
             }
 
             return View("Index", model);
         }
-
 
         [Route("{path}")]
         public async Task<IActionResult> Catch(string path)
@@ -74,7 +74,6 @@ namespace SimpleShort.Controllers
                     longUrl = $"http://{longUrl}";
 
                 return Redirect(longUrl);
-
             }
             catch (Exception ex)
             {

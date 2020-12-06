@@ -1,0 +1,102 @@
+﻿header .menu-toggle {
+    padding: 1.5em;
+    position: absolute;
+    right: 0.25em;
+    cursor: pointer;
+    display: none;
+}
+
+    header .menu-toggle .hamburger, header .menu-toggle .hamburger::before, header .menu-toggle .hamburger::after {
+        content: '';
+        display: block;
+        background: #E2E2E2;
+        height: 3px;
+        width: 1.75em;
+        border-radius: 3px;
+        transition: all ease-in-out 500ms;
+    }
+
+        header .menu-toggle .hamburger::before {
+            transform: translateY(-6px);
+        }
+
+        header .menu-toggle .hamburger::after {
+            transform: translateY(3px);
+        }
+
+    header .menu-toggle.open .hamburger {
+        transform: rotate(45deg);
+    }
+
+        header .menu-toggle.open .hamburger::before {
+            opacity: 0;
+        }
+
+        header .menu-toggle.open .hamburger::after {
+            transform: translateY(-3px) rotate(-90deg);
+        }
+
+header #nav-wrapper ul li a .nav-icon {
+    display: none;
+}
+
+@media screen and (max-width: 1100px) {
+    header .menu-toggle {
+        display: block;
+    }
+
+    header #nav-wrapper ul {
+        display: block;
+    }
+
+    header #nav-wrapper {
+        position: absolute;
+        top: 90px;
+        right: 0;
+        background: #5e4a54;
+        clip-path: circle(0px at top right);
+        transition: clip-path ease-in-out 700ms;
+        z-index: 1000;
+    }
+
+        header #nav-wrapper.nav-open {
+            clip-path: circle(150% at top right);
+        }
+
+        header #nav-wrapper ul {
+            margin: 0;
+            padding: 0;
+            position: relative;
+            z-index: 1000;
+        }
+
+            header #nav-wrapper ul li {
+                list-style: none;
+                border-bottom: 1px solid #575766;
+            }
+
+                header #nav-wrapper ul li:last-child {
+                    border-bottom: none;
+                }
+
+                header #nav-wrapper ul li a {
+                    display: block;
+                    padding: 2em 4em 2em 1.5em;
+                    color: #E2E2E2;
+                    text-decoration: none;
+                }
+
+                    header #nav-wrapper ul li a:hover, header #nav-wrapper ul li a:focus {
+                        color: #464655;
+                        background: #E4B363;
+                    }
+
+                    header #nav-wrapper ul li a .nav-icon {
+                        display: inline-block;
+                        font-size: 1.5em;
+                        margin-right: 1em;
+                        width: 1.1em;
+                        text-align: center;
+                        color: rgba(255, 255, 255, 0.4);
+                    }
+}

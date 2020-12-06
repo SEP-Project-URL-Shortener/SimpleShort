@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
 namespace SimpleShortTests.cs.Controllers
 {
-    class ShortUrlControllerTests
+    internal class ShortUrlControllerTests
     {
         [SetUp]
         public void Setup()

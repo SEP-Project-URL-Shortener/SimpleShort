@@ -10,13 +10,13 @@
  * HttpDelete - Delete information
  */
 
-using System;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using SimpleShort.Data;
 using SimpleShort.Data.LogService;
 using SimpleShort.Models;
+using System;
+using System.Threading.Tasks;
 
 namespace SimpleShort.Controllers
 {

@@ -12,8 +12,8 @@
  * NumberOfUses: int = The number of uses the shortened url has.
  */
 
-using System;
 using Compute.Classes.Random;
+using System;
 
 namespace SimpleShort.Entities
 {

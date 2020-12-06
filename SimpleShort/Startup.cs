@@ -4,7 +4,6 @@
  * This is also used to dependency inject all repositories and services.
  */
 
-using System;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -14,12 +13,12 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using SimpleShort.Data;
 using SimpleShort.Data.LogService;
+using System;
 
 namespace SimpleShort
 {
     public class Startup
     {
-
         public readonly IConfiguration Configuration;
 
         public Startup(IConfiguration configuration)
@@ -43,7 +42,6 @@ namespace SimpleShort
 
             services.AddSwaggerGen(options =>
             {
-
                 options.SwaggerDoc(Configuration["SwaggerUIDocs:Title"], new OpenApiInfo
                 {
                     Title = Configuration["SwaggerUIDocs:Title"],

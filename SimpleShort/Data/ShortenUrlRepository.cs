@@ -4,14 +4,14 @@
  * The user can get the long url, get a certain complete short url object, get all short url objects, create a short url, update a short url, and delete a short url.
  */
 
-using System;
-using System.Linq;
-using System.Threading.Tasks;
 using Compute.Classes.Hashing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using SimpleShort.Entities;
 using SimpleShort.Models;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace SimpleShort.Data
 {
@@ -52,7 +52,6 @@ namespace SimpleShort.Data
                 .Where(shortUrl => DateTime.Compare(shortUrl.Expiration, DateTime.UtcNow) == 1)
                 .FirstOrDefaultAsync();
         }
-
 
         public async Task<SimpleShortUrl[]> GetAllShortenedUrls(string ipAddress)
         {

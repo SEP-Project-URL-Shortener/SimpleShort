@@ -23,7 +23,7 @@ namespace SimpleShort
                     webBuilder.UseStartup<Startup>();
                 });
 
-        private static void SetupConfiguration(HostBuilderContext config, IConfigurationBuilder builder) 
+        private static void SetupConfiguration(HostBuilderContext config, IConfigurationBuilder builder)
         {
             builder.Sources.Clear();
             builder.AddJsonFile("appsettings.json", false, true);

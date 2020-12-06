@@ -4,12 +4,12 @@
  * From here, a user can get a specific log, all logs, and create a log.
  */
 
+using Microsoft.EntityFrameworkCore;
+using SimpleShort.Entities.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using SimpleShort.Entities.Logging;
 
 namespace SimpleShort.Data.LogService
 {

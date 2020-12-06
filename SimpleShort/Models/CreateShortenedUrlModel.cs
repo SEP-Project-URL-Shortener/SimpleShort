@@ -14,7 +14,6 @@ namespace SimpleShort.Models
 {
     public class CreateShortenedUrlModel
     {
-
         [Required(ErrorMessage = "ip address is required")]
         [MinLength(7, ErrorMessage = "ip address must be as least 7 characters")]
         [MaxLength(39, ErrorMessage = "ip address can not be longer than 39 characters")]

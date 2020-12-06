@@ -8,9 +8,9 @@
  * https://gist.github.com/jamiew/1112488
  */
 
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using System.IO;
 
 namespace SimpleShort.Data.FilterService
 {

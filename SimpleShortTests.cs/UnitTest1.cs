@@ -1,11 +1,9 @@
-using System;
-using System.Threading.Tasks;
 using Moq;
 using NUnit.Framework;
 using SimpleShort.Controllers;
 using SimpleShort.Data;
 using SimpleShort.Data.LogService;
-using SimpleShort.Entities;
+using System.Threading.Tasks;
 
 namespace SimpleShortTests.cs
 {
@@ -14,7 +12,6 @@ namespace SimpleShortTests.cs
         private Mock<IShortenUrlRepository> _shortenUrlRepository;
         private Mock<ILogService> _logService;
         private ShortenUrlController _controller;
-
 
         [SetUp]
         public void Setup()
