@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30523.141
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleShort", "SimpleShort\SimpleShort.csproj", "{70E7A1D8-A349-443A-991C-129AB62D58D0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleShortTests.cs", "SimpleShortTests.cs\SimpleShortTests.cs.csproj", "{9C2A1DEE-8339-4A3D-812E-262CD6989ED4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleShortTests", "SimpleShortTests.cs\SimpleShortTests.csproj", "{9C2A1DEE-8339-4A3D-812E-262CD6989ED4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

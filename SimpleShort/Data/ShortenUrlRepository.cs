@@ -55,6 +55,7 @@ namespace SimpleShort.Data
 
         public async Task<SimpleShortUrl[]> GetAllShortenedUrls(string ipAddress)
         {
+
             var sha512 = new Sha512();
             var hashedIpAddress = sha512.Hash(ipAddress, _configuration["Hashing:Pepper"]);
 
