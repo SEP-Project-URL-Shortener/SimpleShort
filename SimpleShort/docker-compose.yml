@@ -1,0 +1,25 @@
+﻿version: "3.8"
+services:
+  sqldatabase:
+    container_name: SQLServer
+    image: mcr.microsoft.com/mssql/server:2019-CU8-ubuntu-16.04
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=({![PassworD0!]?})
+      - MSSQL_PID=Express
+    volumes:
+      - F:/SQLData:/var/opt/mssql/data
+    ports:
+        - 1401:1433
+    deploy: 
+        replicas: 1
+  simpleshort:
+    container_name: SimpleShort
+    build:
+        context: .
+        dockerfile: Dockerfile
+    ports:
+        - 5000:80
+        - 5001:443
+    deploy: 
+        replicas: 1

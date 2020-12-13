@@ -6,6 +6,7 @@
  * Message: string = Any information pertaining to the request.
  */
 
+// Included Libraries
 namespace SimpleShort.Entities
 {
     public class RequestResponse

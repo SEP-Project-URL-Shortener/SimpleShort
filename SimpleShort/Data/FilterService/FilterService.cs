@@ -8,6 +8,7 @@
  * https://gist.github.com/jamiew/1112488
  */
 
+// Included Libraries
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,10 +17,16 @@ namespace SimpleShort.Data.FilterService
 {
     public static class FilterService
     {
+        // Check if the given word is not in the list of invalid words
         public static async Task<bool> IsValid(string word)
         {
+            // cast the word to lowercase
             word = word.ToLower();
+
+            // Get the list of invalid words from a local file
             var invalidWords = await File.ReadAllLinesAsync(@"./Data/FilterService/word.txt");
+
+            // Check if the provided word contains any of the invalid words
             return invalidWords.Any(invalidWord => word.Contains(invalidWord));
         }
     }

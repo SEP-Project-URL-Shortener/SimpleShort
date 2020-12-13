@@ -4,20 +4,21 @@ using SimpleShort.Controllers;
 using SimpleShort.Data;
 using SimpleShort.Data.LogService;
 using System.Threading.Tasks;
+using SimpleShort.Interfaces;
 
 namespace SimpleShortTests.cs
 {
     public class Tests
     {
-        private Mock<IShortenUrlRepository> _shortenUrlRepository;
-        private Mock<ILogService> _logService;
+        private Mock<ShortenUrlRepository> _shortenUrlRepository;
+        private Mock<LogService> _logService;
         private ShortenUrlController _controller;
 
         [SetUp]
         public void Setup()
         {
-            _shortenUrlRepository = new Mock<IShortenUrlRepository>();
-            _logService = new Mock<ILogService>();
+            _shortenUrlRepository = new Mock<ShortenUrlRepository>();
+            _logService = new Mock<LogService>();
             _controller = new ShortenUrlController(_shortenUrlRepository.Object, _logService.Object);
         }
 

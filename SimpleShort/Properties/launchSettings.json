@@ -18,12 +18,10 @@
     },
     "SimpleShort": {
       "commandName": "Project",
-      "launchBrowser": true,
-      "launchUrl": "https://localhost:44388/",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
-      "applicationUrl": "https://localhost:5002;http://localhost:5001"
+      "applicationUrl": "https://localhost:443;http://localhost:80"
     }
   }
 }

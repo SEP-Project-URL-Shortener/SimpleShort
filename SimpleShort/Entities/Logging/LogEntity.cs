@@ -9,6 +9,7 @@
  * Information: string = Any information pertaining to the log.
  */
 
+// Included Libraries
 using System;
 
 namespace SimpleShort.Entities.Logging
