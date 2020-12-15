@@ -4,6 +4,9 @@ FROM mcr.microsoft.com/dotnet/core/aspnet:3.1-buster-slim AS base
 # Change Diectory to /app
 WORKDIR /app
 
+# Expose port 5000
+EXPOSE 5000
+
 # Expose port 80
 EXPOSE 80
 

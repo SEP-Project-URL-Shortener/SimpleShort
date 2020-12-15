@@ -58,6 +58,8 @@ namespace SimpleShort
         {
             if (env.IsDevelopment())
                 Console.ForegroundColor = ConsoleColor.Red;
+            app.UseDeveloperExceptionPage();
+
             Console.ForegroundColor = ConsoleColor.DarkGreen;
 
             app.UseSwagger();

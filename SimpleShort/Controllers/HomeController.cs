@@ -7,8 +7,6 @@
 // Included Libraries
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using SimpleShort.Data;
-using SimpleShort.Data.LogService;
 using SimpleShort.Models;
 using System;
 using System.Threading.Tasks;
@@ -25,7 +23,7 @@ namespace SimpleShort.Controllers
         private readonly ILogService _logger;
 
         // Default constructor gets repository and logger via dependency injection
-        public HomeController(ShortenUrlRepository repository, LogService logger)
+        public HomeController(IShortenUrlRepository repository, ILogService logger)
         {
             _repository = repository;
             _logger = logger;
