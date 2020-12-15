@@ -3,12 +3,14 @@
  * Responsible for giving the user an interface of the repository instead of giving them the entire repository.
  */
 
-using SimpleShort.Entities.Logging;
+// Included Libraries
+
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using SimpleShort.Entities.Logging;
 
-namespace SimpleShort.Data.LogService
+namespace SimpleShort.Interfaces
 {
     public interface ILogRepository
     {

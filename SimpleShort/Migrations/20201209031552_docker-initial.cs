@@ -1,18 +1,14 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
-using System;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace SimpleShort.Migrations
 {
-    public partial class SQLServer : Migration
+    public partial class dockerinitial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.EnsureSchema(
-                name: "public");
-
             migrationBuilder.CreateTable(
                 name: "Logs",
-                schema: "public",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -28,7 +24,6 @@ namespace SimpleShort.Migrations
 
             migrationBuilder.CreateTable(
                 name: "ShortenedUrls",
-                schema: "public",
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
@@ -49,12 +44,10 @@ namespace SimpleShort.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Logs",
-                schema: "public");
+                name: "Logs");
 
             migrationBuilder.DropTable(
-                name: "ShortenedUrls",
-                schema: "public");
+                name: "ShortenedUrls");
         }
     }
 }
